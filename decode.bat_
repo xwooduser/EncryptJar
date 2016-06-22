@@ -1,0 +1,19 @@
+
+@echo OFF
+cd .
+set APP_HOME=%cd%
+::del /f coar.dll 
+::cd ../../../
+::cd c++/coar/Debug
+::copy coar.dll  %APP_HOME%
+cd  %APP_HOME% 
+set CLASSPATH=.;%APP_HOME%\commons-logging-1.0.4.jar;;%APP_HOME%\jre\jre\lib\rt.jar
+::if %JAVA_HOME%="" goto SETJAVA
+::SETJAVA
+SET JAVA_HOME=%APP_HOME%\jre
+::echo %JAVA_HOME%
+set path=.;%JAVA_HOME%\bin;%path%
+javac.exe -encoding utf-8  rrname.java   
+echo rrname.java±‡“Î≥…π¶£°
+java.exe  -Djava.library.path=%APP_HOME% -Xms128m -Xmx800m   rrname
+@pause
